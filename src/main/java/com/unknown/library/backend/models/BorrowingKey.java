@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Embeddable
 @Data
 @EqualsAndHashCode
-class BorrowingKey implements Serializable {
+public class BorrowingKey implements Serializable {
     @Column(name = "book_id")
     Long bookId;
 

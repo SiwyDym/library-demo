@@ -1,9 +1,9 @@
 package com.unknown.library.ui;
 
-import com.unknown.library.backend.services.AuthorService;
-import com.unknown.library.backend.services.BookService;
 import com.unknown.library.backend.models.Author;
 import com.unknown.library.backend.models.Book;
+import com.unknown.library.backend.services.AuthorService;
+import com.unknown.library.backend.services.BookService;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -30,10 +30,9 @@ public class HomeView extends VerticalLayout {
         createFilterComponent(bookService, bookGrid);
         handleConversionOfAuthorsInGrid(authorService, bookGrid);
 
-        bookGrid.getGrid().setColumns("title", "published", "authors", "readers");
-        bookGrid.getCrudFormFactory().setVisibleProperties("title", "published", "authors", "readers");
+        bookGrid.getGrid().setColumns("title", "published", "authors");
+        bookGrid.getCrudFormFactory().setVisibleProperties("title", "published", "authors");
         bookGrid.getCrudFormFactory().setUseBeanValidation(true);
-
 
         add(
                 new H1("My library"),

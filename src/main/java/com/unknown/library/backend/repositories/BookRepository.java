@@ -2,11 +2,14 @@ package com.unknown.library.backend.repositories;
 
 import com.unknown.library.backend.models.Author;
 import com.unknown.library.backend.models.Book;
+import com.unknown.library.backend.models.BookSimplest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 public interface BookRepository extends JpaRepository<Book, Long>, JpaSpecificationExecutor<Book> {
+
+    BookSimplest findBookById(Long id);
 
     /**
      * @param authorName author name
